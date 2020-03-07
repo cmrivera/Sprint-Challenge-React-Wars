@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import styled from "styled-components";
+import StarWars from "./components/StarWars";
 
 const PersonList = styled.div`
   display: flex;
@@ -29,10 +31,13 @@ const App = () => {
   }, []);
   console.log(person);
 
+  if (!person) return "Loading...";
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
+    <PersonList>
+      {person.map((item, index) => (
+        <StarWars key={index} item={item} />
+      ))}
+    </PersonList>
   );
 };
 
