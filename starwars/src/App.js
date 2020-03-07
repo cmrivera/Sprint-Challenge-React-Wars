@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import styled from "styled-components";
-import StarWars from "./components/StarWars";
+import StarWars from "./components/starWars";
 
 const PersonList = styled.div`
   display: flex;
